@@ -43,6 +43,10 @@ void RuleEvent::load(const YAML::Node &node)
 	_music = node["music"].as<std::string>(_music);
 	_regionList = node["regionList"].as<std::vector<std::string> >(_regionList);
 	_city = node["city"].as<bool>(_city);
+	if (node["oneOfItemTriggers"])
+	{
+		_oneOfItemTriggers = node["oneOfItemTriggers"].as<bool>(_oneOfItemTriggers);
+	}
 	_points = node["points"].as<int>(_points);
 	_funds = node["funds"].as<int>(_funds);
 	_loyalty = node["loyalty"].as<int>(_loyalty);

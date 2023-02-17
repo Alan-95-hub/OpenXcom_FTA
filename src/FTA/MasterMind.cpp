@@ -281,12 +281,17 @@ void MasterMind::eventScriptProcessor(std::vector<std::string> scripts, Processo
 				}
 				if (triggerHappy)
 				{
+					auto rule = mod.getEvent(name);
 					// item requirements
-					for (auto& triggerItem : ruleScript->getItemTriggers())
+					for (auto &triggerItem : ruleScript->getItemTriggers())
 					{
 						triggerHappy = (save.isItemObtained(triggerItem.first) == triggerItem.second);
 						if (!triggerHappy)
 							continue;
+						if (rule->getOneOfItemTriggers())
+						{
+							break;
+						}
 					}
 				}
 				if (triggerHappy)
