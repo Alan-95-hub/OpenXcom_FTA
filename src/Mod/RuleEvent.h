@@ -55,7 +55,7 @@ private:
 	std::string _name, _description, _background, _music;
 	std::vector<std::string> _regionList;
 	bool _city;
-	int _points, _funds, _loyalty;	
+	int _points, _funds, _loyalty;
 	int _spawnedPersons;
 	std::string _spawnedPersonType, _spawnedPersonName;
 	YAML::Node _spawnedSoldier;
