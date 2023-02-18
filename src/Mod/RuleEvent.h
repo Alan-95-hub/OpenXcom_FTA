@@ -55,8 +55,7 @@ private:
 	std::string _name, _description, _background, _music;
 	std::vector<std::string> _regionList;
 	bool _city;
-	bool _oneOfItemTriggers = false;
-	int _points, _funds, _loyalty;
+	int _points, _funds, _loyalty;	
 	int _spawnedPersons;
 	std::string _spawnedPersonType, _spawnedPersonName;
 	YAML::Node _spawnedSoldier;
@@ -88,8 +87,6 @@ public:
 	const std::vector<std::string> &getRegionList() const { return _regionList; }
 	/// Is this event city specific?
 	bool isCitySpecific() const { return _city; }
-	/// Gets the amount of score points awarded when this event pops up.
-	bool getOneOfItemTriggers() const { return _oneOfItemTriggers; }
 	/// Gets the amount of score points awarded when this event pops up.
 	int getPoints() const { return _points; }
 	/// Gets the amount of funds awarded when this event pops up.

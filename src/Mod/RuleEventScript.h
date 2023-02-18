@@ -49,7 +49,9 @@ private:
 	std::map<std::string, bool> _xcomBaseInRegionTriggers;
 	std::map<std::string, bool> _xcomBaseInCountryTriggers;
 	bool _affectsGameProgression;
-public:
+	bool _oneOfItemTriggers = false;
+
+  public:
 	/// Creates a blank RuleEventScript.
 	RuleEventScript(const std::string &type);
 	/// Cleans up the event script ruleset.
@@ -114,6 +116,8 @@ public:
 	const std::map<std::string, bool> &getXcomBaseInCountryTriggers() const { return _xcomBaseInCountryTriggers; }
 	/// Gets a flag used for TechTreeViewer.
 	bool getAffectsGameProgression() const { return _affectsGameProgression; }
+	/// Gets the amount of score points awarded when this event pops up.
+	bool getOneOfItemTriggers() const { return _oneOfItemTriggers; }
 	/// Generates an event based on the month.
 	std::string generate(const size_t monthsPassed) const;
 };
